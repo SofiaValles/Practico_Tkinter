@@ -1,0 +1,14 @@
+#Ejercicio 1.1 Tkinter- Contador Creciente.
+from tkinter import *
+
+#ventana
+ventanita = Tk()
+ventanita.title("Contador Creciente")
+ventanita.geometry("600x500")
+
+#marco
+#marco= Frame(ventanita)
+marco= LabelFrame(ventanita, text="Contador Creciente")
+marco.place(x=50, y= 50, width=500, height=400)
+
+ventanita.mainloop()
