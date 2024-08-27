@@ -10,7 +10,7 @@ def Contador_aumentar():
     
 #ventana
 ventana = Tk()
-ventana.title("ContCreciente)")
+ventana.title("ContCreciente")
 ventana.geometry("580x300")
 
 #Tamaño mínimo y máximo de ventana
