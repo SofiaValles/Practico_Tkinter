@@ -33,8 +33,8 @@ button.pack()
 button.place(x=350, y=147)
 
 #Label
-label=Label(ventana,text="Contador",bg="#ebd2be",font= ('Times New Roman',13, "bold"))
-label.place(x=130, y= 133, width=100, height=50)
+label=Label(ventana,text="Contador",bg="#ebd2be",fg="#8a2753", font= ('Times New Roman',13, "bold"))
+label.place(x=128, y= 133, width=100, height=50)
 
 #Entry
 entry= Entry (ventana, bg="white")
