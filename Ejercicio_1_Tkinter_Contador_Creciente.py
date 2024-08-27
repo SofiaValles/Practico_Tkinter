@@ -5,8 +5,10 @@ from tkinter import *
 def Contador_aumentar():
     cont=int(entry.get()) if entry.get() else 0
     cont+=1
+    entry.config(state='normal')
     entry.delete(0, END)  
     entry.insert(0, str(cont))  
+    entry.config(state='readonly')
     
 #ventana
 ventana = Tk()
@@ -37,7 +39,9 @@ label=Label(ventana,text="Contador",bg="#ebd2be",fg="#8a2753", font= ('Times New
 label.place(x=128, y= 133, width=100, height=50)
 
 #Entry
-entry= Entry (ventana, bg="white")
+entry= Entry (ventana, bg="white", textvariable="0")
 entry.place(x=220, y= 150, width=115, height=20)
+entry.insert(0,"0")
+entry.config(state='readonly')
 
 ventana.mainloop()
