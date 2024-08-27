@@ -42,7 +42,7 @@ entry.insert(0,"1")
 entry.config(state='readonly')
 
 entry_factorial= Entry (ventana, bg="white", state='readonly')
-entry_factorial.place(x=300, y= 150, width=190, height=20)
+entry_factorial.place(x=320, y= 150, width=170, height=20)
 entry_factorial.config(state='normal')
 entry_factorial.insert(0,"")
 entry_factorial.config(state='readonly')
@@ -56,7 +56,7 @@ button.place(x=500, y=147)
 label_n=Label(ventana,text="n",bg="#92ADA4",fg="#785330", font= ('Impact',16))
 label_n.place(x=100, y= 133, width=10, height=50)
 
-label=Label(ventana,text="Factorial",bg="#92ADA4",fg="#785330", font= ('Impact',16))
-label.place(x=200, y= 133, width=100, height=50)
+label=Label(ventana,text="Factorial (n)",bg="#92ADA4",fg="#785330", font= ('Impact',15))
+label.place(x=210, y= 134, width=100, height=50)
 
 ventana.mainloop()
