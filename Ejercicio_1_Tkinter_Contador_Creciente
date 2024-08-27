@@ -28,7 +28,7 @@ marco= LabelFrame(ventana, text="Contador Creciente", bg="#ebd2be", font= ('Time
 marco.place(x=90, y= 60, width=400, height=200)
 
 #Botones
-button=Button(ventana,text="Sumar",borderwidth=2, height=1, width=7,anchor="center",bg="#b3e0a2", font= ('Comic sens MC',8,'bold'),command=Contador_aumentar)
+button=Button(ventana,text="+",borderwidth=2, height=1, width=7,anchor="center",bg="#b3e0a2", font= ('Comic sens MC',8,'bold'),command=Contador_aumentar)
 button.pack()
 button.place(x=350, y=147)
 
