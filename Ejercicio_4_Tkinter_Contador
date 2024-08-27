@@ -43,7 +43,7 @@ marco.place(x=90, y= 60, width=500, height=200)
 entry= Entry (ventana,textvariable="0", bg="white", state='readonly')
 entry.place(x=200, y= 150, width=130, height=20)
 entry.config(state='normal')
-entry.insert(0,"")
+entry.insert(0,"0")
 entry.config(state='readonly')
 
 #Botones
