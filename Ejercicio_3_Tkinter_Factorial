@@ -1,5 +1,5 @@
 #Ejercicio 1.3 – Factorial.
-from Tkinter import *
+from tkinter import *
 
 #ventana
 ventana = Tk()
