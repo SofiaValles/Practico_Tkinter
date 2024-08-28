@@ -2,19 +2,30 @@
 from tkinter import *
 import random
 
+def Validar_entrada(char):
+    if char.isdigit() or char == ".":
+        return True
+    return False
+
 def Generar():
-    num1_valor = int(num1.get())
-    num2_valor = int(num2.get())
+    try:
+        num1_valor = int(num1.get())
+        num2_valor = int(num2.get())
+        if num1_valor > num2_valor:
+            num1_valor, num2_valor = num2_valor, num1_valor
 
-    if num1_valor > num2_valor:
-        num1_valor, num2_valor = num2_valor, num1_valor
+        numero_generado = random.randint(num1_valor, num2_valor)
+        
+        entry.config(state='normal')
+        entry.delete(0, END)
+        entry.insert(0, str(numero_generado))
+        entry.config(state='readonly')
 
-    numero_generado = random.randint(num1_valor, num2_valor)
-    
-    entry.config(state='normal')
-    entry.delete(0, END)
-    entry.insert(0, str(numero_generado))
-    entry.config(state='readonly')
+    except ValueError:
+        entry.config(state='normal')
+        entry.delete(0, END)
+        entry.insert(0, "Error")
+        entry.config(state='readonly')
 
 #ventana
 ventana = Tk()
@@ -35,8 +46,10 @@ num2 = Spinbox(ventana, from_=1, to=100, bg="white")
 num2.place(x=300, y=120, width=130, height=20)
 
 
+validate_cmd = ventana.register(Validar_entrada)
+
 #Entrada
-entry= Entry (ventana,textvariable="0", bg="#DFD3C9", state='readonly')
+entry= Entry (ventana,textvariable="0", bg="#DFD3C9", state='readonly', validatecommand=(validate_cmd, '%S'))
 entry.place(x=300, y= 170, width=130, height=20)
 entry.config(state='normal')
 entry.insert(0,"0")
