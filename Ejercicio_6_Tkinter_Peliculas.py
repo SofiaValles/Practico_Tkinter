@@ -2,11 +2,25 @@
 from tkinter import *
 
 def Agregar():
-    peli = entry.get().strip()
-    if peli:
+    peli = entry.get()
+
+    if peli in lista.get(0, END):
+        modal = Toplevel(ventana)
+        modal.title("Película ya ingresada")
+        modal.geometry("300x150")
+        modal.configure(bg="#f5eb9d")
+
+        label_error= Label(modal, text="¡Error!",bg="#f5eb9d", fg="#4b1854", font=('Impact', 12))
+        label_error.place(x=30, y=15, width=140, height=35)
+        label_error2= Label(modal, text="Su película ya ha sido cargada",bg="#f5eb9d", fg="#593822", font=('Times New Roman', 12))
+        label_error2.place(x=40, y=25, width=220, height=35)
+
+        boton_cerrar= Button(modal,text="Aceptar",borderwidth=2, height=1, width=8,anchor="center",bg="#DAA38F", font= ('Comic sens MC',8,'bold'), command=modal.destroy)
+        boton_cerrar.place(x=110, y=80)
+
+    else:
         lista.insert(END, peli)
         entry.delete(0, END)
-
 #ventana
 ventana = Tk()
 ventana.title("Películas")
@@ -15,7 +29,7 @@ ventana.configure(bg="#c688d1")
 ventana.resizable(False, False)
 
 #Botón
-button=Button(ventana,text="Añadir",borderwidth=2, height=1, width=7,anchor="center",bg="#DAA38F", font= ('Comic sens MC',8,'bold'), command=Agregar)
+button=Button(ventana,text="Añadir",borderwidth=2, height=1, width=8,anchor="center",bg="#DAA38F", font= ('Comic sens MC',8,'bold'), command=Agregar)
 button.place(x=93, y=147)
 
 #Entrada
