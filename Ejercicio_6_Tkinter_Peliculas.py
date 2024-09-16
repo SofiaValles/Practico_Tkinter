@@ -12,7 +12,7 @@ def Agregar():
         modal_espacios.geometry("300x150")
         modal_espacios.configure(bg="#f5eb9d")
 
-        label_error= Label(modal_espacios, text="No puede ingresar tantos espacios!",bg="#f5eb9d", fg="#4b1854", font=('Comic sens MC', 12))
+        label_error= Label(modal_espacios, text="No puede ingresar tantos espacios!\n o Ingresó un espacio al principio",bg="#f5eb9d", fg="#4b1854", font=('Comic sens MC', 12))
         label_error.place(x=25 , y=25, width=250, height=35)
 
         boton_cerrar_espacios= Button(modal_espacios,text="Aceptar",borderwidth=2, height=1, width=8,anchor="center",bg="#DAA38F", font= ('Comic sens MC',8,'bold'), command=modal_espacios.destroy)
